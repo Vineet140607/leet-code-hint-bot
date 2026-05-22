@@ -57,6 +57,9 @@ def get_hint():
     except Exception as exc:
         return jsonify({"error": f"Failed to generate hint: {str(exc)}"}), 500
 
-
+@app.route("/")
+def home():
+    return "LeetCode Hint Bot is Running!"
+    
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

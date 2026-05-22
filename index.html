@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode Hint Bot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="particles" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <main class="app">
+    <header class="app-header">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">&lt;/&gt;</span>
+        <h1 class="title-flicker">LeetCode Hint Bot</h1>
+      </div>
+      <p>Stuck? We got you.</p>
+      <div class="timer-bar">
+        <span id="timerDisplay" class="timer-display">Time spent: 00:00</span>
+        <button type="button" id="resetTimerBtn" class="timer-reset-btn">Reset Timer</button>
+      </div>
+    </header>
+
+    <section class="panel glass">
+      <label for="problemStatement">Problem Statement</label>
+      <textarea
+        id="problemStatement"
+        placeholder="Paste the LeetCode problem statement here..."
+      ></textarea>
+    </section>
+
+    <section class="panel glass">
+      <label for="currentCode">Current Code</label>
+      <textarea
+        id="currentCode"
+        placeholder="Paste your current solution code here..."
+      ></textarea>
+    </section>
+
+    <section class="panel glass controls">
+      <h2>Get a Hint</h2>
+      <div class="level-indicator" aria-label="Hint level progress">
+        <span class="level-dot" data-step="1">1</span>
+        <span class="level-line"></span>
+        <span class="level-dot" data-step="2">2</span>
+        <span class="level-line"></span>
+        <span class="level-dot" data-step="3">3</span>
+      </div>
+      <div class="button-row">
+        <button type="button" class="hint-btn" id="hint1Btn" data-level="1">Hint 1 (subtle)</button>
+        <button type="button" class="hint-btn" id="hint2Btn" data-level="2">Hint 2 (approach)</button>
+        <button type="button" class="hint-btn" id="hint3Btn" data-level="3">Hint 3 (almost solution)</button>
+      </div>
+    </section>
+
+    <section class="panel glass">
+      <h2>Hint Output</h2>
+      <div id="hintOutput" class="hint-box animate-ready">
+        Your hint will appear here.
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
